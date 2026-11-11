@@ -40,6 +40,15 @@ class Ebook(Book):
         data["file_format"] = self.file_format 
         return data
 
+    @classmethod
+    def from_dict(cls, data):
+        return cls(
+            title=data.get("title"),
+            author=data.get("author"),
+            year=data.get("year"),
+            file_format=data.get("file_format")
+        )
+
 class AudioBook(Book):
     def __init__(self, title, author, year, duration):
         super().__init__(title, author, year)
@@ -54,13 +63,22 @@ class AudioBook(Book):
         data["duration"] = self.duration  
         return data
 
+    
+    @classmethod
+    def from_dict(cls, data):
+        return cls(
+            title=data.get("title"),
+            author=data.get("author"),
+            year=data.get("year"),
+            duration=data.get("duration")
+        )
 class Bookmanager:
     def __init__(self):
         self.books = []  
 
     def add_book(self, book):
         self.books.append(book)
-        print(f"Book '{book.title}' by {book.author} added to the collection.")
+        print(f"Book Added to your collection: {book}")
 
     def show_books(self):
         if not self.books:
@@ -68,12 +86,12 @@ class Bookmanager:
         else:
             print("Books in the collection:")
             for book in self.books:
-                print(f"Title: {book.title}, Author: {book.author}, Year: {book.year}")
+                print(book)
 
     def search_books(self, title):
         for book in self.books:
             if book.title == title:
-                print(f"Found book: Title: {book.title}, Author: {book.author}, Year: {book.year}")
+                print(f"Found book: {book}")
                 return
         else:
             print(f"No book found with the title '{title}'.")
