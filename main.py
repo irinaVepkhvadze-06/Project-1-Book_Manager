@@ -73,6 +73,3 @@ def main_menu():
 
         else:
             print("Invalid option! Please select a valid option (1-4).")
-
-if __name__ == "__main__":
-    main_menu()

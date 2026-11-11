@@ -1,0 +1,29 @@
+[
+    {
+        "type": "AudioBook",
+        "title": "IT",
+        "author": "KING",
+        "year": 1987,
+        "duration": 45
+    },
+    {
+        "type": "AudioBook",
+        "title": "little women",
+        "author": "may escotte",
+        "year": 1869,
+        "duration": 45
+    },
+    {
+        "type": "Book",
+        "title": "1984",
+        "author": "orwell",
+        "year": 1965
+    },
+    {
+        "type": "Ebook",
+        "title": "To kill a mockingbird",
+        "author": "Harper lee",
+        "year": 1960,
+        "file_format": "PDF"
+    }
+]
